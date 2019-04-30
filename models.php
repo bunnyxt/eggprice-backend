@@ -6,4 +6,9 @@ class OptionNode {
     public $children;
 }
 
+class PriceNode {
+    public $date;
+    public $price;
+}
+
 ?>

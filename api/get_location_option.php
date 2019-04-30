@@ -55,5 +55,4 @@ if ($provinces = $conn->query('select distinct province from location;')) {
 
 echo (json_encode($options, JSON_UNESCAPED_UNICODE));
 
-
 ?>

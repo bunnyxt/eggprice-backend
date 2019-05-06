@@ -1,7 +1,7 @@
 <?php
 
-require '../db.php';
-require '../models.php';
+require 'db.php';
+require 'models.php';
 
 header('Access-Control-Allow-Origin:*');
 

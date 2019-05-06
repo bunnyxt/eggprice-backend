@@ -122,9 +122,9 @@ def crwal_main():
 
             # crwal end
             end_ts = get_timestamp_s()
-            sql = 'update crwal_task set end_time = {0} && status = "finished" where id = {1}'.format(
-                end_ts, task_id)
             try:
+                sql = 'update crwal_task set end_time = {0}, status = "finished" where id = {1}'.format(
+                    end_ts, task_id)
                 cursor.execute(sql)
                 conn.commit()
             except Exception as e:

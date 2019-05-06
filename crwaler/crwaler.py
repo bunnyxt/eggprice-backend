@@ -145,9 +145,10 @@ def crwal_task():
 
 if __name__ == "__main__":
     # for debug
-    crwal_task()
+    #crwal_task()
 
-    # schedule.every(10).minutes.do(crwal_task)
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(10)
+    # schedule.every(10).minutes.do(crwal_task) # with task
+    schedule.every(10).minutes.do(crwal_main)
+    while True:
+        schedule.run_pending()
+        time.sleep(10)

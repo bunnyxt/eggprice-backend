@@ -7,7 +7,7 @@ header('Access-Control-Allow-Origin:*');
 
 $options = [];
 
-if ($provinces = $conn->query('select distinct province from location;')) {
+if ($provinces = $conn->query('select distinct province from location where is_valid=1;')) {
 
     // set province
     while ($province = $provinces->fetch(PDO::FETCH_NUM)) {
@@ -21,7 +21,7 @@ if ($provinces = $conn->query('select distinct province from location;')) {
     for ($i = 0; $i < count($options); $i++) {
         
         $provinceName = $options[$i]->value;
-        if ($cities = $conn->query('select distinct city from location where province="'.$provinceName.'";')) {
+        if ($cities = $conn->query('select distinct city from location where province="'.$provinceName.'" && is_valid=1;')) {
 
             // set cities
             while ($city = $cities->fetch(PDO::FETCH_NUM)) {
@@ -35,7 +35,7 @@ if ($provinces = $conn->query('select distinct province from location;')) {
             for ($j = 0; $j < count($options[$i]->children); $j++) {
 
                 $cityName = $options[$i]->children[$j]->value;
-                if ($countries = $conn->query('select distinct country from location where province="'.$provinceName.'" && city="'.$cityName.'";')) {
+                if ($countries = $conn->query('select distinct country from location where province="'.$provinceName.'" && city="'.$cityName.'" && is_valid=1;')) {
 
                     // set countries
                     while ($country = $countries->fetch(PDO::FETCH_NUM)) {

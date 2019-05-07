@@ -88,7 +88,7 @@ if __name__ == "__main__":
     # plt.show()
 
     timestep = 10
-    train_size = int(len(data) * 0.9)
+    train_size = int(len(data) * 0.8)
 
     # i = 1
     imfs_prediction = []

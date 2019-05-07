@@ -85,7 +85,7 @@ if __name__ == "__main__":
     timestep = 10
     train_size = int(len(data) * 0.9)
 
-    i = 1
+    # i = 1
     imfs_prediction = []
     for imf in imfs:
         # prepare train data and test data
@@ -102,13 +102,13 @@ if __name__ == "__main__":
         prediction_Y = model.predict(test_X)
 
         # compare validation and prediction
-        plt.subplot(len(imfs), 1, i)
-        plt.plot(test_Y)
-        plt.plot(prediction_Y)
-        i += 1
+        # plt.subplot(len(imfs), 1, i)
+        # plt.plot(test_Y)
+        # plt.plot(prediction_Y)
+        # i += 1
         imfs_prediction.append(prediction_Y)
 
-    plt.show()
+    # plt.show()
 
     validation = data.values[train_size:]
 
